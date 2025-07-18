@@ -66,6 +66,12 @@ graph = graph_builder.compile()
 
 # Take the user input and stream the response
 
+'''
+ReAct: Reasoning Action -  Such type of architecture where the LLM is used to reason and then use the tools to get the answer.
+For instance, if the user asks about an author of a particular research paper and then also asks about the name of the music composer,
+for a specific show, then the LLM will reason about the answer and then use the tools to get the answer.
+'''
+
 user_input = input("Enter your query: ")
 events = graph.stream({"messages": [{"role": "user", "content": user_input}]})
 
