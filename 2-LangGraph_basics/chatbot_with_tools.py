@@ -15,13 +15,14 @@ load_dotenv(dotenv_path='.env', override=True)
 # Define the tools
 from langchain_community.utilities import ArxivAPIWrapper, WikipediaAPIWrapper
 from langchain_community.tools import ArxivQueryRun, WikipediaQueryRun
+# from langchain_community.tools import TavilySearchResults
 
 arxiv_wrapper = ArxivAPIWrapper()
 wikipedia_wrapper = WikipediaAPIWrapper()
 
 arxiv_tool = ArxivQueryRun(api_wrapper=arxiv_wrapper)
 wikipedia_tool = WikipediaQueryRun(api_wrapper=wikipedia_wrapper)
-
+# tavily_tool = TavilySearchResults(max_results=5)
 tools = [arxiv_tool, wikipedia_tool]
 
 

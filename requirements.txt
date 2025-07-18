@@ -7,3 +7,4 @@ langchain-core
 arxiv
 wikipedia
 pydantic
+tavily-python
