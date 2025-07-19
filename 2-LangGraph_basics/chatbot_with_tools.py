@@ -50,8 +50,11 @@ graph_builder = StateGraph(State)
 # Define the nodes
 
 graph_builder.add_node("chatbot", chatbot)
+'''
 tool_node = ToolNode(tools=tools)
 graph_builder.add_node("tools", tool_node)
+'''
+graph_builder.add_node("tools", ToolNode(tools=tools))
 graph_builder.add_conditional_edges(
     "chatbot",
     tools_condition
